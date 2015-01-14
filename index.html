@@ -18,6 +18,7 @@
         <p>
             YOU WIN!
         </p>
+        <button class="restart">Restart</button>
     </div>
 
     <div id="loser">
@@ -60,9 +61,11 @@
         });
         }
 
-        document.querySelector('.restart').onclick = function() {
-            location.reload();
-        };
+        [].forEach.call(document.querySelectorAll('.restart'), function(el) {
+            el.onclick = function() {
+                location.reload();
+            };
+        });
 
         var isMovingGamma = false;
         var isMovingBeta = false;
