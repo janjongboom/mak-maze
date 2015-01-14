@@ -1,0 +1,6 @@
+{
+  "name": "Mak Maze",
+  "description": "Yay a game!",
+  "launch_path": "/index.html",
+  "orientation": "portrait-primary"
+}

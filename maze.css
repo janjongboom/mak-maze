@@ -1,0 +1,24 @@
+
+    html, body { margin: 0; width: 100%; font-family: "Open Sans", sans-serif; font-size: 10px; }
+        canvas {
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            
+        }
+
+h1 {
+    margin: 0;
+    color: darkorange;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 1.6rem;
+    margin-left: 2.5vw;
+    margin-bottom: .5rem;
+    font-family: monospace;
+}
+    
