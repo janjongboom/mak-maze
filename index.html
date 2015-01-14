@@ -35,6 +35,17 @@
         };
         jan.src = 'jan.png';
 
+        var dollar = new Image();
+        dollar.onload = function() {
+            console.log('dollar is loaded');
+        };
+        dollar.src = 'dollar-sign-gold.jpg';
+
+        var DOLLAR_X = 18;
+        var DOLLAR_Y = 288;
+        var DOLLAR_W = 24;
+        var DOLLAR_H = 24;
+
         var AVATAR_SIZE = 15;
 
         if ('requestWakeLock' in navigator) {
@@ -110,11 +121,14 @@
             mazeImg.onload = function () {
                 context.drawImage(mazeImg, 0, 0);
                 drawRectangle(rectX, rectY, "#0000FF");
-                context.beginPath();
-                context.arc(18, 283, 7, 0, 2 * Math.PI, false);
-                context.closePath();
-                context.fillStyle = '#00FF00';
-                context.fill();
+
+                context.drawImage(dollar, DOLLAR_X, DOLLAR_Y, DOLLAR_W, DOLLAR_H);
+
+                // context.beginPath();
+                // context.arc(18, 283, 7, 0, 2 * Math.PI, false);
+                // context.closePath();
+                // context.fillStyle = '#00FF00';
+                // context.fill();
             };
             mazeImg.src = "maze.gif";
         }
@@ -184,15 +198,17 @@
                         canMove = 0; // 0 means: the rectangle can't move
                         break;
                     }
-                    else if (data[i] === 0 && data[i + 1] === 255 && data[i + 2] === 0) { // #00FF00
-                        canMove = 2; // 2 means: the end point is reached
-                        break;
-                    }
                 }
             }
             else {
                 canMove = 0;
             }
+
+            if ((destX >= DOLLAR_X && destX < (DOLLAR_X + DOLLAR_W)) &&
+                (destY >= DOLLAR_Y && destY < (DOLLAR_Y + DOLLAR_H))) {
+                    canMove = 2;
+                }
+
             return canMove;
         }
         function createTimer(seconds) {
