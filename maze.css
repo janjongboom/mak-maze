@@ -4,7 +4,7 @@
             width: 95vw;
             margin-left: 2.5vw;
             margin-right: 2.5vw;
-            
+
         }
 
 h1 {
@@ -21,4 +21,25 @@ h1 {
     margin-bottom: .5rem;
     font-family: monospace;
 }
-    
+#winner, #loser {
+    position: absolute;
+    width: 80%;
+    padding: 1rem;
+    border: solid 1px black;
+    left: calc((10% + 1rem) / 2) ;
+    margin-right: auto;
+    top: 1rem;
+    background: white;
+    display: none;
+}
+#winner img, #loser img { width: 100%; max-width: 100%; position: relative; }
+#winner p { font-size: 3rem; text-align: center; color: green;}
+#loser p { font-size: 3rem; text-align: center; color: red;}
+.restart{
+    background-color: blanchedalmond;
+    border-radius: 4px;
+    border-color:  black;
+    padding: 2px 2px 2px 2px;
+    width: 10rem;
+    margin-left: calc(50% - 5rem);
+}
